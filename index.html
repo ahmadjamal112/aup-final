@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Dr. Arbab Waseem Abbas | Lecturer — ICS/IT, University of Agriculture Peshawar</title>
+<meta name="description" content="Dr. Arbab Waseem Abbas — PhD Computer Systems Engineering, UET Peshawar. Lecturer at ICS/IT, University of Agriculture Peshawar. Cyber Security, IoT, AI, Remote Sensing."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════════
+   ICE WHITE & SILVER CRYSTAL — DR. ARBAB WASEEM
+══════════════════════════════════════════════ */
+:root{
+  --bg:           #eff4f9;
+  --bg2:          #e6eef6;
+  --white:        #ffffff;
+  --ice:          #f8fbff;
+  --accent:       #4a8fc2;
+  --accent-deep:  #2d6a9f;
+  --accent-soft:  #7ab8e0;
+  --crystal-blue: #90c4e0;
+  --silver:       #a8bfce;
+  --silver-light: #ccdde8;
+  --glass-white:  rgba(255,255,255,0.75);
+  --glass-border: rgba(255,255,255,0.92);
+  --text-dark:    #18273a;
+  --text-mid:     #3a506b;
+  --text-sub:     #617a92;
+  --text-light:   #96afc4;
+  --shadow-soft:  0 8px 48px rgba(74,143,194,0.13), 0 2px 10px rgba(80,130,170,0.08);
+  --shadow-hover: 0 18px 70px rgba(74,143,194,0.2),  0 4px 18px rgba(80,130,170,0.12);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-dark);overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg2);}::-webkit-scrollbar-thumb{background:linear-gradient(var(--accent),var(--crystal-blue));border-radius:3px;}
+
+/* CURSOR */
+*{cursor:none;}
+#CR{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:0 0 12px rgba(74,143,194,0.7);}
+#CR2{position:fixed;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(74,143,194,0.5);pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all 0.15s ease;}
+
+/* BACKGROUND */
+.bg-layer{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.bg-base{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 15% 5%, rgba(170,210,240,0.35) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 85% 85%, rgba(155,200,235,0.28) 0%,transparent 60%),linear-gradient(160deg,#edf3fa 0%,#e3ecf5 50%,#dae8f2 100%);}
+.bg-orb{position:absolute;border-radius:50%;filter:blur(70px);animation:of var(--d,20s) ease-in-out infinite alternate;}
+.o1{width:550px;height:550px;background:radial-gradient(circle,rgba(190,175,255,0.16),transparent 70%);top:-12%;left:55%;--d:19s;}
+.o2{width:500px;height:400px;background:radial-gradient(circle,rgba(140,215,255,0.13),transparent 70%);bottom:5%;left:-8%;--d:25s;animation-delay:-9s;}
+.o3{width:320px;height:320px;background:radial-gradient(circle,rgba(255,215,170,0.1),transparent 70%);top:45%;right:8%;--d:15s;animation-delay:-6s;}
+@keyframes of{0%{transform:translate(0,0);}100%{transform:translate(22px,-26px);}}
+.crystal-shard{position:absolute;background:linear-gradient(135deg,rgba(255,255,255,0.6),rgba(180,215,240,0.3));border:1px solid rgba(255,255,255,0.7);opacity:0.07;animation:csr var(--d,32s) linear infinite;}
+@keyframes csr{to{transform:rotate(360deg);}}
+
+/* CANVAS */
+#pcv{position:fixed;inset:0;z-index:0;pointer-events:none;}
+
+/* GLASS CARD */
+.gc{background:var(--glass-white);border:1px solid var(--glass-border);border-radius:20px;backdrop-filter:blur(26px) saturate(1.8);-webkit-backdrop-filter:blur(26px);box-shadow:var(--shadow-soft);position:relative;overflow:hidden;transition:all 0.38s cubic-bezier(.2,.8,.3,1);}
+.gc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.95),transparent);pointer-events:none;}
+.gc::after{content:'';position:absolute;top:-50%;left:-120%;width:55%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.22),rgba(200,220,255,0.12),transparent);transform:skewX(-18deg);transition:left 0.65s ease;pointer-events:none;}
+.gc:hover::after{left:170%;}
+.gc:hover{box-shadow:var(--shadow-hover);border-color:rgba(255,255,255,1);transform:translateY(-5px);}
+.gc-rainbow::before{background:linear-gradient(90deg,rgba(195,175,255,0.7),rgba(140,215,255,0.7),rgba(175,255,195,0.6),rgba(255,225,145,0.6),rgba(195,175,255,0.7));height:2px;}
+
+/* PRISM DIVIDER */
+.pdiv{height:2px;border:none;background:linear-gradient(90deg,rgba(195,175,255,0.55),rgba(140,215,255,0.55),rgba(175,255,195,0.5),rgba(255,225,145,0.5),rgba(255,175,175,0.5),rgba(195,175,255,0.55));}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(246,251,255,0.86);backdrop-filter:blur(28px) saturate(2);border-bottom:1px solid rgba(255,255,255,0.9);box-shadow:0 2px 24px rgba(80,130,170,0.08);transition:all 0.3s;}
+.nl{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.ng{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,rgba(255,255,255,0.92),rgba(195,225,245,0.65));border:1px solid rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 3px 14px rgba(74,143,194,0.18);}
+.nn{font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:var(--text-dark);}
+.ns{font-size:0.58rem;color:var(--text-sub);letter-spacing:0.12em;text-transform:uppercase;}
+.nav-ul{display:flex;align-items:center;gap:22px;list-style:none;}
+.nav-ul a{color:var(--text-sub);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.04em;transition:color 0.2s;position:relative;padding-bottom:2px;}
+.nav-ul a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--accent),var(--crystal-blue));transform:scaleX(0);transition:transform 0.22s;}
+.nav-ul a:hover{color:var(--accent);}
+.nav-ul a:hover::after{transform:scaleX(1);}
+.nav-cta{background:rgba(255,255,255,0.85)!important;border:1px solid rgba(74,143,194,0.28)!important;color:var(--accent-deep)!important;padding:6px 16px!important;border-radius:9px!important;box-shadow:0 2px 12px rgba(74,143,194,0.12)!important;font-weight:600!important;font-size:0.78rem!important;}
+.nav-cta:hover{box-shadow:0 5px 22px rgba(74,143,194,0.22)!important;transform:translateY(-2px);}
+.nav-cta::after{display:none!important;}
+.ham{display:none;background:none;border:none;flex-direction:column;gap:5px;cursor:none;}
+.ham span{width:20px;height:1.5px;background:var(--accent);border-radius:2px;}
+.mob{display:none;position:fixed;top:70px;left:0;right:0;z-index:999;background:rgba(246,251,255,0.97);backdrop-filter:blur(22px);padding:18px 5%;flex-direction:column;gap:12px;border-bottom:1px solid rgba(255,255,255,0.9);}
+.mob.open{display:flex;}
+.mob a{color:var(--text-mid);text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(74,143,194,0.08);font-size:0.9rem;}
+
+/* HERO */
+#hero{min-height:100vh;position:relative;z-index:1;display:flex;align-items:center;padding:120px 5% 80px;overflow:hidden;}
+.dmd{position:absolute;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,0.68),rgba(195,225,245,0.38));border:1px solid rgba(255,255,255,0.82);backdrop-filter:blur(6px);transform:rotate(45deg);animation:df var(--d,10s) ease-in-out infinite alternate;box-shadow:0 4px 18px rgba(100,160,200,0.12);}
+@keyframes df{0%{transform:rotate(45deg)translateY(0);}100%{transform:rotate(55deg)translateY(-16px);}}
+.rl{position:absolute;height:2px;border-radius:2px;filter:blur(0.8px);background:linear-gradient(90deg,rgba(195,175,255,0.75),rgba(140,215,255,0.75),rgba(175,255,195,0.65),rgba(255,225,145,0.65));animation:rls 7s ease-in-out infinite alternate;}
+@keyframes rls{0%{opacity:0.35;transform:scaleX(0.8);}100%{opacity:0.75;transform:scaleX(1.05);}}
+
+.hl{position:relative;z-index:2;max-width:660px;}
+.h-chip{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,0.82);border:1px solid rgba(255,255,255,0.95);backdrop-filter:blur(14px);border-radius:100px;padding:6px 18px;margin-bottom:26px;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-deep);box-shadow:0 3px 18px rgba(74,143,194,0.11);animation:fu 0.9s ease both;}
+.cdot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(74,143,194,0.7);animation:bk 2s infinite;}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:0.3}}
+.h-sup{font-size:0.8rem;font-weight:500;color:var(--text-sub);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px;font-family:'DM Mono',monospace;animation:fu 0.9s 0.08s ease both;}
+.h-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,7.5vw,5.8rem);font-weight:900;line-height:1.0;margin-bottom:8px;animation:fu 0.9s 0.14s ease both;}
+.h-h1 .n1{display:block;color:var(--text-dark);text-shadow:0 2px 16px rgba(74,143,194,0.12);}
+.h-h1 .n2{display:block;background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 45%,var(--crystal-blue) 80%,#a8daf0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 10px rgba(74,143,194,0.28));}
+.role-pill{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(255,255,255,0.88),rgba(205,230,248,0.68));border:1px solid rgba(255,255,255,0.96);border-radius:14px;padding:12px 22px;margin:20px 0 26px;box-shadow:0 4px 22px rgba(74,143,194,0.12),inset 0 1px 0 rgba(255,255,255,1);backdrop-filter:blur(18px);animation:fu 0.9s 0.22s ease both;}
+.ri-ico{font-size:1.5rem;}
+.ri-info strong{display:block;font-size:0.9rem;font-weight:700;color:var(--accent-deep);}
+.ri-info span{font-size:0.71rem;color:var(--text-sub);letter-spacing:0.05em;}
+.h-p{font-size:1.02rem;color:var(--text-mid);line-height:1.85;max-width:540px;margin-bottom:36px;animation:fu 0.9s 0.28s ease both;}
+.h-btns{display:flex;flex-wrap:wrap;gap:13px;animation:fu 0.9s 0.34s ease both;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:11px;font-size:0.88rem;font-weight:600;text-decoration:none;letter-spacing:0.03em;transition:all 0.3s;}
+.bp{background:linear-gradient(135deg,var(--accent-deep),var(--accent),var(--crystal-blue));color:#fff;box-shadow:0 5px 26px rgba(74,143,194,0.32);}
+.bp:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(74,143,194,0.42);}
+.bs{background:rgba(255,255,255,0.78);border:1px solid rgba(74,143,194,0.22);color:var(--accent-deep);box-shadow:0 3px 16px rgba(80,130,170,0.1);backdrop-filter:blur(14px);}
+.bs:hover{background:rgba(255,255,255,0.96);transform:translateY(-3px);box-shadow:0 7px 26px rgba(74,143,194,0.18);}
+.h-stats{display:flex;margin-top:50px;background:rgba(255,255,255,0.68);border:1px solid rgba(255,255,255,0.95);border-radius:14px;overflow:hidden;backdrop-filter:blur(18px);box-shadow:0 4px 26px rgba(80,130,170,0.1),inset 0 1px 0 rgba(255,255,255,1);animation:fu 0.9s 0.42s ease both;}
+.hs{flex:1;padding:20px 16px;text-align:center;border-right:1px solid rgba(74,143,194,0.09);transition:background 0.3s;}
+.hs:last-child{border-right:none;}
+.hs:hover{background:rgba(74,143,194,0.04);}
+.hs-n{font-family:'Playfair Display',serif;font-size:1.95rem;font-weight:900;line-height:1;background:linear-gradient(135deg,var(--accent-deep),var(--crystal-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hs-l{font-size:0.64rem;color:var(--text-light);letter-spacing:0.1em;text-transform:uppercase;margin-top:5px;}
+
+/* floating profile card */
+.h-card{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:min(355px,35vw);animation:fu 0.9s 0.3s ease both;}
+.pc{padding:32px 26px;}
+.pav{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,rgba(195,225,245,0.8),rgba(255,255,255,0.92));border:2px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 16px;box-shadow:0 8px 30px rgba(74,143,194,0.18),0 0 0 4px rgba(74,143,194,0.07),inset 0 2px 0 rgba(255,255,255,1);}
+.pn{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800;color:var(--text-dark);text-align:center;margin-bottom:2px;}
+.pd{font-size:0.68rem;color:var(--accent);text-align:center;letter-spacing:0.09em;font-weight:600;margin-bottom:6px;}
+.pi{font-size:0.7rem;color:var(--text-sub);text-align:center;margin-bottom:16px;}
+.p-div{height:1px;background:linear-gradient(90deg,transparent,rgba(74,143,194,0.18),transparent);margin-bottom:16px;}
+.p-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px;}
+.ptg{font-size:0.62rem;font-weight:600;padding:3px 10px;border-radius:100px;background:rgba(255,255,255,0.82);border:1px solid rgba(74,143,194,0.18);color:var(--accent-deep);letter-spacing:0.05em;}
+.p-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.pg{background:rgba(255,255,255,0.6);border:1px solid rgba(74,143,194,0.1);border-radius:11px;padding:11px;text-align:center;}
+.pg-v{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:var(--accent-deep);}
+.pg-k{font-size:0.6rem;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;}
+.pc-contacts{display:flex;flex-direction:column;gap:7px;margin-top:14px;}
+.pcc{display:flex;align-items:center;gap:8px;font-size:0.72rem;color:var(--text-sub);padding:6px 10px;background:rgba(255,255,255,0.5);border-radius:8px;border:1px solid rgba(255,255,255,0.9);}
+.pcc a{color:var(--accent);text-decoration:none;font-weight:600;}
+
+@keyframes fu{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+
+/* SECTION */
+section{padding:110px 5%;position:relative;z-index:1;}
+.stag{display:inline-flex;align-items:center;gap:7px;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:13px;font-family:'DM Mono',monospace;}
+.stag::before{content:'◆';font-size:0.5rem;opacity:0.7;}
+.sh2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;line-height:1.15;color:var(--text-dark);margin-bottom:14px;}
+.sh2 .ac{background:linear-gradient(135deg,var(--accent-deep),var(--crystal-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sdesc{font-size:0.97rem;color:var(--text-sub);line-height:1.8;max-width:560px;}
+.tc{text-align:center;}.tc .sdesc{margin:0 auto;}
+
+/* ABOUT */
+#about{background:transparent;}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.cert-list{display:flex;flex-direction:column;gap:15px;}
+.cgc{padding:24px 22px;}
+.chdr{display:flex;align-items:center;gap:13px;margin-bottom:10px;}
+.cico{width:46px;height:46px;min-width:46px;border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,0.95),rgba(195,225,245,0.68));border:1px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:0 3px 14px rgba(74,143,194,0.14);}
+.ct{font-family:'Playfair Display',serif;font-size:0.98rem;font-weight:800;color:var(--text-dark);}
+.cb{font-size:0.82rem;color:var(--text-sub);line-height:1.6;}
+.cbadge{display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:0.64rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:rgba(74,143,194,0.07);border:1px solid rgba(74,143,194,0.18);padding:3px 10px;border-radius:100px;}
+
+.spec-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px;}
+.spec-tag{font-size:0.78rem;font-weight:600;padding:7px 16px;border-radius:100px;background:rgba(255,255,255,0.82);border:1px solid rgba(74,143,194,0.18);color:var(--text-mid);box-shadow:0 2px 10px rgba(74,143,194,0.07);transition:all 0.25s;}
+.spec-tag:hover{background:rgba(255,255,255,0.98);border-color:rgba(74,143,194,0.38);color:var(--accent-deep);transform:translateY(-2px);}
+
+.resp-list{display:flex;flex-direction:column;gap:11px;margin-top:28px;}
+.ri{display:flex;align-items:flex-start;gap:13px;padding:14px 16px;border-radius:13px;background:rgba(255,255,255,0.52);border:1px solid rgba(255,255,255,0.95);transition:all 0.3s;}
+.ri:hover{background:rgba(255,255,255,0.88);transform:translateX(5px);box-shadow:0 3px 20px rgba(74,143,194,0.09);}
+.ri-ico{width:36px;height:36px;min-width:36px;border-radius:9px;background:linear-gradient(135deg,rgba(255,255,255,0.92),rgba(195,225,245,0.62));border:1px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:0.95rem;box-shadow:0 2px 10px rgba(74,143,194,0.1);}
+.ri-txt h4{font-size:0.86rem;font-weight:700;color:var(--text-dark);margin-bottom:1px;}
+.ri-txt p{font-size:0.76rem;color:var(--text-sub);line-height:1.45;}
+
+/* COURSES */
+#courses{background:linear-gradient(180deg,rgba(218,232,244,0.4),transparent);}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;margin-top:50px;}
+.course-gc{padding:26px;}
+.clv{display:inline-flex;align-items:center;gap:5px;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:3px 11px;border-radius:100px;margin-bottom:13px;}
+.lv-b{background:rgba(0,170,90,0.08);color:#0a8f52;border:1px solid rgba(0,170,90,0.2);}
+.lv-i{background:rgba(210,120,0,0.08);color:#a86000;border:1px solid rgba(210,120,0,0.2);}
+.lv-a{background:rgba(175,35,35,0.07);color:#991c1c;border:1px solid rgba(175,35,35,0.18);}
+.cico2{font-size:2.3rem;display:block;margin-bottom:13px;}
+.cn{font-family:'Playfair Display',serif;font-size:1.06rem;font-weight:800;color:var(--text-dark);margin-bottom:8px;line-height:1.3;}
+.cd{font-size:0.81rem;color:var(--text-sub);line-height:1.62;margin-bottom:14px;}
+.cchips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.chip{font-size:0.62rem;font-weight:600;padding:3px 9px;border-radius:6px;background:rgba(255,255,255,0.82);border:1px solid rgba(74,143,194,0.14);color:var(--text-mid);font-family:'DM Mono',monospace;}
+.cft{display:flex;justify-content:space-between;padding-top:13px;border-top:1px solid rgba(74,143,194,0.07);font-size:0.72rem;color:var(--text-light);}
+.cft strong{color:var(--accent);}
+
+/* YOUTUBE */
+#youtube{background:transparent;}
+.ytg{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:20px;margin-top:50px;}
+.yt-gc{padding:0;overflow:hidden;}
+.yt-th{position:relative;height:168px;overflow:hidden;background:linear-gradient(135deg,rgba(195,220,240,0.55),rgba(175,210,235,0.38));display:flex;align-items:center;justify-content:center;}
+.yt-bg-ico{font-size:3.4rem;opacity:0.2;}
+.yt-play{position:relative;z-index:2;width:55px;height:55px;border-radius:50%;background:rgba(255,255,255,0.92);border:2px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;box-shadow:0 5px 26px rgba(74,143,194,0.22);transition:all 0.3s;}
+.yt-play::after{content:'▶';font-size:1.05rem;color:var(--accent-deep);margin-left:3px;}
+.yt-gc:hover .yt-play{transform:scale(1.1);box-shadow:0 9px 36px rgba(74,143,194,0.32);}
+.yt-lbl{position:absolute;top:11px;left:11px;font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.88);border:1px solid rgba(255,255,255,1);color:var(--accent-deep);padding:3px 9px;border-radius:100px;backdrop-filter:blur(8px);}
+.yt-bd{padding:18px 20px;}
+.yt-ttl{font-family:'Playfair Display',serif;font-size:0.98rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;line-height:1.35;}
+.yt-d{font-size:0.78rem;color:var(--text-sub);line-height:1.6;margin-bottom:11px;}
+.yt-meta{display:flex;gap:14px;font-size:0.68rem;color:var(--text-light);}
+
+/* AWARDS */
+#awards{background:linear-gradient(180deg,rgba(218,232,244,0.38),transparent);}
+.awg{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;margin-top:50px;}
+.aw-gc{padding:26px 24px;display:flex;align-items:flex-start;gap:16px;}
+.aw-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:rgba(74,143,194,0.15);line-height:1;min-width:48px;}
+.aw-body{}
+.aw-t{font-family:'Playfair Display',serif;font-size:0.96rem;font-weight:800;color:var(--text-dark);margin-bottom:5px;line-height:1.3;}
+.aw-d{font-size:0.8rem;color:var(--text-sub);line-height:1.6;}
+.aw-tag{display:inline-block;margin-top:9px;font-size:0.64rem;font-weight:700;color:var(--accent);background:rgba(74,143,194,0.07);border:1px solid rgba(74,143,194,0.18);padding:2px 10px;border-radius:100px;letter-spacing:0.08em;}
+
+/* BLOG */
+#blog{background:transparent;}
+.blg{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:20px;margin-top:50px;}
+.blog-gc{padding:0;overflow:hidden;}
+.blog-top{height:120px;padding:20px;display:flex;align-items:flex-end;background:linear-gradient(135deg,rgba(190,215,238,0.48),rgba(210,232,248,0.3));position:relative;overflow:hidden;}
+.blog-cat{position:relative;z-index:2;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,1);color:var(--accent-deep);padding:3px 11px;border-radius:100px;}
+.blog-bg-ico{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.2rem;opacity:0.15;}
+.blog-bd{padding:20px;}
+.blog-dt{font-size:0.66rem;color:var(--text-light);letter-spacing:0.08em;font-family:'DM Mono',monospace;margin-bottom:7px;}
+.blog-ttl{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:800;color:var(--text-dark);margin-bottom:8px;line-height:1.35;}
+.blog-ex{font-size:0.79rem;color:var(--text-sub);line-height:1.62;margin-bottom:14px;}
+.blog-link{display:inline-flex;align-items:center;gap:5px;font-size:0.76rem;font-weight:700;color:var(--accent);text-decoration:none;transition:gap 0.2s;}
+.blog-link:hover{gap:9px;}
+
+/* GALLERY */
+#gallery{background:linear-gradient(180deg,rgba(218,232,244,0.38),transparent);}
+.galgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:50px;}
+.gi{border-radius:15px;overflow:hidden;position:relative;cursor:none;}
+.gi:nth-child(1){grid-column:span 2;grid-row:span 2;}
+.gi:nth-child(5){grid-column:span 2;}
+.gin{height:100%;min-height:155px;background:linear-gradient(135deg,rgba(190,215,238,0.48),rgba(210,232,248,0.32));border:1px solid rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;font-size:2.8rem;position:relative;overflow:hidden;backdrop-filter:blur(10px);transition:all 0.38s;}
+.gi:nth-child(1) .gin{min-height:315px;font-size:5rem;}
+.gin::before{content:'';position:absolute;inset:0;background:linear-gradient(155deg,rgba(255,255,255,0.18),transparent 60%);}
+.gi:hover .gin{transform:scale(1.03);box-shadow:0 14px 48px rgba(74,143,194,0.18);}
+.gcap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(255,255,255,0.92));backdrop-filter:blur(7px);padding:14px 13px 10px;font-size:0.76rem;font-weight:600;color:var(--text-dark);transform:translateY(100%);transition:transform 0.32s;}
+.gi:hover .gcap{transform:translateY(0);}
+
+/* TESTIMONIALS */
+#testimonials{background:transparent;}
+.testg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;}
+.tst-gc{padding:26px 24px;}
+.tstars{color:#f0a000;font-size:0.78rem;margin-bottom:13px;letter-spacing:2px;}
+.tq{font-size:2.8rem;font-family:'Playfair Display',serif;line-height:0.7;color:rgba(74,143,194,0.18);margin-bottom:11px;display:block;}
+.ttxt{font-size:0.86rem;color:var(--text-mid);line-height:1.76;font-style:italic;margin-bottom:18px;}
+.tauth{display:flex;align-items:center;gap:11px;}
+.tav{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,rgba(195,225,245,0.8),rgba(255,255,255,0.9));border:2px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 2px 10px rgba(74,143,194,0.12);}
+.tnm{font-weight:700;font-size:0.86rem;color:var(--text-dark);}
+.trole{font-size:0.7rem;color:var(--text-light);}
+
+/* ENROLLMENT */
+#enroll{background:linear-gradient(180deg,rgba(215,230,244,0.48),transparent);}
+.enroll-wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:start;margin-top:54px;}
+.ef-list{display:flex;flex-direction:column;gap:14px;}
+.ef{display:flex;align-items:flex-start;gap:13px;padding:16px;border-radius:13px;background:rgba(255,255,255,0.58);border:1px solid rgba(255,255,255,0.95);transition:all 0.3s;}
+.ef:hover{background:rgba(255,255,255,0.9);transform:translateX(5px);}
+.ef-ico{width:42px;height:42px;min-width:42px;border-radius:10px;background:linear-gradient(135deg,rgba(255,255,255,0.94),rgba(195,225,245,0.66));border:1px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:1.05rem;box-shadow:0 2px 12px rgba(74,143,194,0.12);}
+.ef-txt h4{font-size:0.87rem;font-weight:700;color:var(--text-dark);margin-bottom:2px;}
+.ef-txt p{font-size:0.76rem;color:var(--text-sub);line-height:1.48;}
+.form-gc{padding:36px;}
+.fg{margin-bottom:17px;}
+.fl{display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-sub);margin-bottom:7px;}
+.fi{width:100%;padding:11px 15px;border-radius:9px;background:rgba(255,255,255,0.82);border:1px solid rgba(196,220,238,0.78);color:var(--text-dark);font-family:'DM Sans',sans-serif;font-size:0.88rem;transition:all 0.22s;outline:none;box-shadow:0 2px 7px rgba(74,143,194,0.05),inset 0 1px 0 rgba(255,255,255,1);}
+.fi:focus{border-color:rgba(74,143,194,0.48);background:rgba(255,255,255,0.97);box-shadow:0 0 0 3px rgba(74,143,194,0.09);}
+.fi::placeholder{color:var(--text-light);}
+select.fi{appearance:none;}
+textarea.fi{resize:vertical;min-height:95px;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.enroll-btn{width:100%;padding:13px;border-radius:11px;border:none;background:linear-gradient(135deg,var(--accent-deep),var(--accent),var(--crystal-blue));color:#fff;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:700;letter-spacing:0.03em;cursor:none;transition:all 0.3s;box-shadow:0 5px 24px rgba(74,143,194,0.28);}
+.enroll-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(74,143,194,0.38);}
+
+/* CONTACT */
+#contact{background:transparent;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:52px;}
+.contact-btn{width:100%;padding:13px;border-radius:11px;border:none;background:linear-gradient(135deg,var(--accent-deep),var(--accent));color:#fff;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;cursor:none;transition:all 0.3s;box-shadow:0 5px 22px rgba(74,143,194,0.25);}
+.contact-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(74,143,194,0.35);}
+.ci-list{display:flex;flex-direction:column;gap:12px;}
+.ci{display:flex;align-items:flex-start;gap:14px;padding:16px;border-radius:13px;background:rgba(255,255,255,0.58);border:1px solid rgba(255,255,255,0.95);transition:all 0.3s;backdrop-filter:blur(14px);}
+.ci:hover{background:rgba(255,255,255,0.9);transform:translateX(4px);}
+.ci-ico{width:44px;height:44px;min-width:44px;border-radius:11px;background:linear-gradient(135deg,rgba(255,255,255,0.95),rgba(195,225,245,0.66));border:1px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:1.05rem;box-shadow:0 3px 13px rgba(74,143,194,0.13);}
+.ci-txt h4{font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:3px;}
+.ci-txt p,.ci-txt a{font-size:0.89rem;color:var(--text-dark);font-weight:600;text-decoration:none;transition:color 0.2s;}
+.ci-txt a:hover{color:var(--accent);}
+.hrs-gc{padding:24px;}
+.hrs-t{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:800;color:var(--text-dark);margin-bottom:14px;display:flex;align-items:center;gap:7px;}
+.hr{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(74,143,194,0.07);font-size:0.81rem;}
+.hr:last-child{border:none;}
+.hr-d{color:var(--text-mid);font-weight:500;}
+.hr-t{color:var(--accent-deep);font-weight:700;font-family:'DM Mono',monospace;font-size:0.76rem;}
+
+/* DEPARTMENT SECTION */
+#department{background:linear-gradient(180deg,rgba(215,230,244,0.42),transparent);}
+.dept-header-card{padding:30px 32px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.dept-title-group{}
+.dept-title-group h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800;color:var(--text-dark);margin-bottom:4px;}
+.dept-title-group p{font-size:0.82rem;color:var(--text-sub);}
+.dept-links{display:flex;flex-wrap:wrap;gap:9px;}
+.dept-link{font-size:0.72rem;font-weight:600;padding:6px 14px;border-radius:8px;text-decoration:none;background:rgba(255,255,255,0.82);border:1px solid rgba(74,143,194,0.2);color:var(--accent-deep);transition:all 0.22s;}
+.dept-link:hover{background:rgba(255,255,255,0.98);border-color:rgba(74,143,194,0.4);transform:translateY(-2px);}
+.dept-link.ext{background:rgba(74,143,194,0.08);color:var(--accent);}
+
+.staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;}
+.staff-card{padding:20px 18px;text-align:center;transition:all 0.32s;}
+.staff-card.highlighted{border-color:rgba(74,143,194,0.45)!important;background:rgba(255,255,255,0.92)!important;}
+.staff-card.highlighted::before{background:linear-gradient(90deg,rgba(195,175,255,0.7),rgba(140,215,255,0.7),rgba(175,255,195,0.6),rgba(255,225,145,0.6),rgba(195,175,255,0.7));height:2px;}
+.staff-av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,rgba(195,225,245,0.7),rgba(255,255,255,0.88));border:1.5px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 11px;box-shadow:0 3px 14px rgba(74,143,194,0.12);}
+.staff-card.highlighted .staff-av{background:linear-gradient(135deg,rgba(74,143,194,0.18),rgba(140,210,240,0.12));border:2px solid rgba(74,143,194,0.35);box-shadow:0 4px 20px rgba(74,143,194,0.22),0 0 0 3px rgba(74,143,194,0.06);}
+.staff-name{font-family:'Playfair Display',serif;font-size:0.88rem;font-weight:800;color:var(--text-dark);margin-bottom:3px;line-height:1.25;}
+.staff-card.highlighted .staff-name{color:var(--accent-deep);}
+.staff-role{font-size:0.68rem;color:var(--text-sub);line-height:1.4;}
+.you-badge{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:rgba(74,143,194,0.08);border:1px solid rgba(74,143,194,0.22);padding:2px 9px;border-radius:100px;}
+
+.uap-info-strip{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.uap-strip-card{padding:20px 22px;display:flex;align-items:flex-start;gap:13px;}
+.uap-strip-ico{width:42px;height:42px;min-width:42px;border-radius:10px;background:linear-gradient(135deg,rgba(255,255,255,0.95),rgba(195,225,245,0.66));border:1px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 2px 10px rgba(74,143,194,0.1);}
+.uap-strip-txt h4{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:3px;}
+.uap-strip-txt p,.uap-strip-txt a{font-size:0.85rem;color:var(--text-dark);font-weight:600;text-decoration:none;line-height:1.5;}
+.uap-strip-txt a:hover{color:var(--accent);}
+
+/* FOOTER */
+footer{background:rgba(222,234,244,0.62);border-top:1px solid rgba(255,255,255,0.92);padding:50px 5% 26px;position:relative;z-index:1;backdrop-filter:blur(18px);}
+.ftg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px;margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid rgba(74,143,194,0.09);}
+.ft-brand p{font-size:0.81rem;color:var(--text-sub);line-height:1.8;margin-top:13px;max-width:280px;}
+.ft-col h4{font-size:0.64rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:13px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.ft-col ul a{color:var(--text-sub);text-decoration:none;font-size:0.81rem;transition:color 0.2s;}
+.ft-col ul a:hover{color:var(--accent-deep);}
+.ftb{display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:var(--text-light);}
+.ftb a{color:var(--accent);text-decoration:none;font-weight:600;}
+.ft-uap{margin-top:22px;padding-top:22px;border-top:1px solid rgba(74,143,194,0.09);display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.ft-uap-item{font-size:0.76rem;color:var(--text-sub);}
+.ft-uap-item strong{display:block;font-size:0.64rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
+.ft-uap-item a{color:var(--text-sub);text-decoration:none;transition:color 0.2s;}
+.ft-uap-item a:hover{color:var(--accent);}
+@media(max-width:600px){.uap-info-strip{grid-template-columns:1fr;}.ft-uap{grid-template-columns:1fr;}}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.h-card{display:none;}.hl{max-width:100%;}}
+@media(max-width:900px){
+  .nav-ul{display:none;}.ham{display:flex;}
+  .ag,.enroll-wrap,.contact-grid{grid-template-columns:1fr;gap:32px;}
+  .testg{grid-template-columns:1fr 1fr;}
+  .galgrid{grid-template-columns:repeat(2,1fr);}
+  .gi:nth-child(1){grid-column:span 2;}.gi:nth-child(5){grid-column:span 1;}
+  .ftg{grid-template-columns:1fr 1fr;}
+  #CR,#CR2{display:none;}*{cursor:auto;}
+}
+@media(max-width:600px){
+  section{padding:78px 5%;}
+  .testg{grid-template-columns:1fr;}
+  .galgrid{grid-template-columns:1fr;}
+  .gi:nth-child(1),.gi:nth-child(5){grid-column:span 1;}
+  .h-stats{flex-direction:column;}
+  .hs{border-right:none;border-bottom:1px solid rgba(74,143,194,0.09);}
+  .ftg{grid-template-columns:1fr;}
+  .ftb{flex-direction:column;gap:7px;text-align:center;}
+  .fg-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="CR"></div><div id="CR2"></div>
+<canvas id="pcv"></canvas>
+
+<!-- BG LAYERS -->
+<div class="bg-layer">
+  <div class="bg-base"></div>
+  <div class="bg-orb o1"></div><div class="bg-orb o2"></div><div class="bg-orb o3"></div>
+  <div class="crystal-shard" style="width:220px;height:220px;top:12%;left:6%;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);--d:34s;"></div>
+  <div class="crystal-shard" style="width:150px;height:150px;bottom:18%;right:10%;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);--d:28s;animation-delay:-11s;"></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nl">
+    <div class="ng">🛡️</div>
+    <div><div class="nn">Dr. Arbab Waseem Abbas</div><div class="ns">Lecturer · ICS/IT · UAP</div></div>
+  </a>
+  <ul class="nav-ul">
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#youtube">Lectures</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#department">Department</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#enroll" class="nav-cta">✍️ Enroll Now</a></li>
+  </ul>
+  <button class="ham" onclick="tm()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mn">
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#courses" onclick="cm()">Courses</a>
+  <a href="#youtube" onclick="cm()">Video Lectures</a>
+  <a href="#awards" onclick="cm()">Awards</a>
+  <a href="#department" onclick="cm()">Department</a>
+  <a href="#blog" onclick="cm()">Blog</a>
+  <a href="#gallery" onclick="cm()">Gallery</a>
+  <a href="#enroll" onclick="cm()">Enroll Now</a>
+  <a href="#contact" onclick="cm()">Contact</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="dmd" style="width:78px;height:78px;top:20%;right:43%;opacity:0.65;--d:9s;"></div>
+  <div class="dmd" style="width:48px;height:48px;top:62%;right:38%;opacity:0.45;--d:13s;animation-delay:-4s;"></div>
+  <div class="dmd" style="width:32px;height:32px;top:32%;right:36%;opacity:0.35;--d:7s;animation-delay:-2s;"></div>
+  <div class="rl" style="width:280px;top:24%;right:18%;transform:rotate(-14deg);"></div>
+  <div class="rl" style="width:180px;bottom:30%;left:3%;transform:rotate(7deg);opacity:0.45;"></div>
+
+  <div class="hl">
+    <div class="h-chip"><span class="cdot"></span>Lecturer · ICS/IT · University of Agriculture Peshawar</div>
+    <div class="h-sup">Dr.</div>
+    <h1 class="h-h1"><span class="n1">Arbab Waseem</span><span class="n2">Abbas</span></h1>
+    <div class="role-pill">
+      <span class="ri-ico">🎓</span>
+      <div class="ri-info">
+        <strong>PhD — Computer Systems Engineering, UET Peshawar</strong>
+        <span>MSc Computer Systems Engineering · IoT · Cyber Security · AI · Remote Sensing</span>
+      </div>
+    </div>
+    <p class="h-p">A distinguished educator and researcher at ICS/IT, University of Agriculture Peshawar — specializing in Cyber Security, Internet of Things, Artificial Intelligence, Smart Logistics, and Digital Image Processing. Producing gold-medal scholars and driving research that matters.</p>
+    <div class="h-btns">
+      <a href="#enroll" class="btn bp">✍️ Enroll in a Course</a>
+      <a href="#contact" class="btn bs">📬 Get in Touch</a>
+    </div>
+    <div class="h-stats">
+      <div class="hs"><div class="hs-n">PhD</div><div class="hs-l">Qualification</div></div>
+      <div class="hs"><div class="hs-n">16</div><div class="hs-l">MS Scholars</div></div>
+      <div class="hs"><div class="hs-n">5</div><div class="hs-l">Gold Medallists</div></div>
+      <div class="hs"><div class="hs-n">30+</div><div class="hs-l">BS Projects</div></div>
+    </div>
+  </div>
+
+  <div class="h-card">
+    <div class="gc gc-rainbow pc">
+      <div class="pav">👨‍💻</div>
+      <div class="pn">Dr. Arbab Waseem Abbas</div>
+      <div class="pd">PhD · Computer Systems Engineering</div>
+      <div class="pi">Lecturer — ICS/IT, Univ. of Agriculture Peshawar</div>
+      <div class="p-div"></div>
+      <div class="p-tags">
+        <span class="ptg">Cyber Security</span><span class="ptg">IoT</span>
+        <span class="ptg">AI</span><span class="ptg">Remote Sensing</span>
+        <span class="ptg">Pattern Recognition</span>
+      </div>
+      <div class="p-grid">
+        <div class="pg"><div class="pg-v">16</div><div class="pg-k">MS Scholars</div></div>
+        <div class="pg"><div class="pg-v">5</div><div class="pg-k">Gold Medals</div></div>
+        <div class="pg"><div class="pg-v">30+</div><div class="pg-k">BS Projects</div></div>
+        <div class="pg"><div class="pg-v">A+</div><div class="pg-k">Educator</div></div>
+      </div>
+      <div class="pc-contacts">
+        <div class="pcc">📞 <a href="tel:+923015922642">+92 301 5922642</a></div>
+        <div class="pcc">✉️ <a href="mailto:aristocratarbab@aup.edu.pk">aristocratarbab@aup.edu.pk</a></div>
+        <div class="pcc">🌐 <a href="https://www.aup.edu.pk" target="_blank">www.aup.edu.pk</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="ag">
+    <div class="cert-list">
+      <div class="gc cgc gc-rainbow">
+        <div class="chdr"><div class="cico">🎓</div><div class="ct">PhD — Computer Systems Engineering</div></div>
+        <p class="cb">Doctor of Philosophy from University of Engineering & Technology (UET) Peshawar. Research focus on Cyber Security, IoT, AI-based systems, and Digital Signal & Image Processing for real-world applications.</p>
+        <span class="cbadge">✦ UET Peshawar</span>
+      </div>
+      <div class="gc cgc">
+        <div class="chdr"><div class="cico">📜</div><div class="ct">MSc — Computer Systems Engineering</div></div>
+        <p class="cb">Master of Science with Merit Scholarship from UET Peshawar — building deep expertise in computer systems, networks, and intelligent algorithms before advancing to doctoral research.</p>
+        <span class="cbadge">✦ Merit Scholarship Holder · UET Peshawar</span>
+      </div>
+      <div class="gc cgc">
+        <div class="chdr"><div class="cico">🏛️</div><div class="ct">Institution</div></div>
+        <p class="cb">Institute of Computer Sciences and Information Technology (ICS/IT), The University of Agriculture, Peshawar, 25130, Khyber Pakhtunkhwa, Pakistan.</p>
+        <span class="cbadge">✦ Post-graduate Co-ordinator · Member BoS · Member QEC</span>
+      </div>
+      <div style="margin-top:4px;">
+        <div class="stag">Areas of Specialization</div>
+        <div class="spec-tags">
+          <span class="spec-tag">🔐 Cyber Security</span>
+          <span class="spec-tag">📡 Internet of Things</span>
+          <span class="spec-tag">🧠 Artificial Intelligence</span>
+          <span class="spec-tag">🚚 Smart Logistics</span>
+          <span class="spec-tag">🔍 Pattern Recognition</span>
+          <span class="spec-tag">🛰️ Remote Sensing</span>
+          <span class="spec-tag">🖼️ Digital Image Processing</span>
+          <span class="spec-tag">🔊 Digital Signal Processing</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="stag">About Dr. Abbas</div>
+      <h2 class="sh2">Educator, Researcher &amp; <span class="ac">Innovator</span></h2>
+      <p class="sdesc">Dr. Arbab Waseem Abbas is a dedicated Lecturer at ICS/IT, University of Agriculture Peshawar with a PhD from UET Peshawar. He teaches at both undergraduate and postgraduate levels, has produced 16 MS scholars (5 gold medallists), and supervised 30+ BS projects. He also developed Pakistan's 1st official online Ideas Bank for the Directorate of Science and Technology (DoST).</p>
+      <div class="stag" style="margin-top:28px;">Professional Responsibilities</div>
+      <div class="resp-list">
+        <div class="ri"><div class="ri-ico">📚</div><div class="ri-txt"><h4>Teaching — UG & PG Level</h4><p>Delivers specialized courses at both undergraduate and postgraduate levels in Cyber Security, IoT, and AI.</p></div></div>
+        <div class="ri"><div class="ri-ico">🎓</div><div class="ri-txt"><h4>Postgraduate Co-ordinator</h4><p>Oversees CS/IT MS programs at IBMS, The University of Agriculture Peshawar.</p></div></div>
+        <div class="ri"><div class="ri-ico">📋</div><div class="ri-txt"><h4>Member Board of Studies (BoS)</h4><p>Member BoS for CS/IT MS programs — contributing to curriculum design and quality.</p></div></div>
+        <div class="ri"><div class="ri-ico">🔍</div><div class="ri-txt"><h4>Member QEC</h4><p>Active member of the Quality Enhancement Cell, University of Agriculture Peshawar.</p></div></div>
+        <div class="ri"><div class="ri-ico">🧩</div><div class="ri-txt"><h4>Research & Project Advisor</h4><p>Guides students in project selection, research direction, and co-curricular academic activities.</p></div></div>
+        <div class="ri"><div class="ri-ico">✅</div><div class="ri-txt"><h4>Member Accreditation Committee</h4><p>Serves on the Accreditation Committee for CS/IT programs at IBMS.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ COURSES ══ -->
+<section id="courses">
+  <div class="tc">
+    <div class="stag">Courses & Teachings</div>
+    <h2 class="sh2">What I <span class="ac">Teach</span></h2>
+    <p class="sdesc">Structured courses at undergraduate and postgraduate levels — from foundational computing to advanced Cyber Security and AI.</p>
+  </div>
+  <div class="cgrid">
+    <div class="gc course-gc gc-rainbow"><span class="clv lv-b">● Undergraduate</span><span class="cico2">🔐</span><div class="cn">Cyber Security Fundamentals</div><div class="cd">Core concepts: threat landscapes, CIA triad, risk management, firewalls, IDS/IPS, and secure system design for modern digital infrastructure.</div><div class="cchips"><span class="chip">Threat Models</span><span class="chip">Firewalls</span><span class="chip">IDS/IPS</span><span class="chip">Risk Mgmt</span></div><div class="cft"><span>⏱ 1 Semester</span><span>Level: <strong>BS</strong></span></div></div>
+    <div class="gc course-gc"><span class="clv lv-i">● Undergraduate</span><span class="cico2">📡</span><div class="cn">Internet of Things (IoT)</div><div class="cd">Architecture, protocols, sensors, embedded systems, smart devices, and real-world IoT deployment for smart cities, logistics, and industry applications.</div><div class="cchips"><span class="chip">Arduino</span><span class="chip">Raspberry Pi</span><span class="chip">MQTT</span><span class="chip">Edge AI</span></div><div class="cft"><span>⏱ 1 Semester</span><span>Level: <strong>BS</strong></span></div></div>
+    <div class="gc course-gc gc-rainbow"><span class="clv lv-a">● Postgraduate</span><span class="cico2">🧠</span><div class="cn">Artificial Intelligence</div><div class="cd">Machine learning algorithms, neural networks, deep learning, and AI application development — including threat detection and intelligent systems design.</div><div class="cchips"><span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">ML Algorithms</span><span class="chip">Neural Nets</span></div><div class="cft"><span>⏱ 1 Semester</span><span>Level: <strong>MS/BS</strong></span></div></div>
+    <div class="gc course-gc"><span class="clv lv-i">● Undergraduate</span><span class="cico2">🖼️</span><div class="cn">Digital Image Processing</div><div class="cd">Image acquisition, filtering, segmentation, feature extraction, and pattern recognition using MATLAB and Python — with applications in remote sensing.</div><div class="cchips"><span class="chip">MATLAB</span><span class="chip">OpenCV</span><span class="chip">Segmentation</span><span class="chip">Feature Extract</span></div><div class="cft"><span>⏱ 1 Semester</span><span>Level: <strong>BS</strong></span></div></div>
+    <div class="gc course-gc gc-rainbow"><span class="clv lv-a">● Postgraduate</span><span class="cico2">🛰️</span><div class="cn">Remote Sensing & GIS</div><div class="cd">Satellite imagery analysis, GIS integration, land use classification, and remote sensing applications using AI for environmental and agricultural monitoring.</div><div class="cchips"><span class="chip">GIS</span><span class="chip">Satellite Data</span><span class="chip">Classification</span><span class="chip">Land Analysis</span></div><div class="cft"><span>⏱ 1 Semester</span><span>Level: <strong>MS</strong></span></div></div>
+    <div class="gc course-gc"><span class="clv lv-i">● Undergraduate</span><span class="cico2">🔊</span><div class="cn">Digital Signal Processing</div><div class="cd">Sampling, Fourier transforms, filter design, signal analysis, and DSP applications in communications, audio processing, and embedded systems.</div><div class="cchips"><span class="chip">FFT</span><span class="chip">Filter Design</span><span class="chip">MATLAB</span><span class="chip">Transforms</span></div><div class="cft"><span>⏱ 1 Semester</span><span>Level: <strong>BS</strong></span></div></div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ YOUTUBE ══ -->
+<section id="youtube">
+  <div class="tc">
+    <div class="stag">Video Lectures</div>
+    <h2 class="sh2">Watch &amp; <span class="ac">Learn</span></h2>
+    <p class="sdesc">Free educational video content on Cyber Security, IoT, AI and more — accessible to all students everywhere.</p>
+  </div>
+  <div class="ytg">
+    <div class="gc yt-gc gc-rainbow"><div class="yt-th"><div class="yt-bg-ico">🔐</div><span class="yt-lbl">Cyber Security</span><div class="yt-play"></div></div><div class="yt-bd"><div class="yt-ttl">Introduction to Cyber Security — Full Lecture</div><div class="yt-d">Threat actors, attack vectors, defense strategies and the security mindset. A must-watch foundation for every CS/IT student.</div><div class="yt-meta"><span>▶ 1.2K views</span><span>⏱ 48 mins</span></div></div></div>
+    <div class="gc yt-gc"><div class="yt-th"><div class="yt-bg-ico">📡</div><span class="yt-lbl">IoT</span><div class="yt-play"></div></div><div class="yt-bd"><div class="yt-ttl">IoT Architecture & Smart Systems Explained</div><div class="yt-d">From basic sensor nodes to smart city infrastructure — understanding IoT end-to-end with real project demonstrations.</div><div class="yt-meta"><span>▶ 980 views</span><span>⏱ 52 mins</span></div></div></div>
+    <div class="gc yt-gc gc-rainbow"><div class="yt-th"><div class="yt-bg-ico">🧠</div><span class="yt-lbl">AI</span><div class="yt-play"></div></div><div class="yt-bd"><div class="yt-ttl">Machine Learning for Beginners — Complete Guide</div><div class="yt-d">Step-by-step introduction to ML algorithms, classification, regression, and neural networks with Python code examples.</div><div class="yt-meta"><span>▶ 2.1K views</span><span>⏱ 1hr 5mins</span></div></div></div>
+    <div class="gc yt-gc"><div class="yt-th"><div class="yt-bg-ico">🖼️</div><span class="yt-lbl">Digital Image Processing</span><div class="yt-play"></div></div><div class="yt-bd"><div class="yt-ttl">Image Processing with MATLAB — Practical Lab</div><div class="yt-d">Hands-on MATLAB tutorial covering image filtering, segmentation, edge detection, and feature extraction techniques.</div><div class="yt-meta"><span>▶ 760 views</span><span>⏱ 44 mins</span></div></div></div>
+    <div class="gc yt-gc gc-rainbow"><div class="yt-th"><div class="yt-bg-ico">🛰️</div><span class="yt-lbl">Remote Sensing</span><div class="yt-play"></div></div><div class="yt-bd"><div class="yt-ttl">Remote Sensing & GIS Applications in Pakistan</div><div class="yt-d">Using satellite imagery and GIS tools to analyze land use, agricultural patterns, and environmental changes in KPK.</div><div class="yt-meta"><span>▶ 540 views</span><span>⏱ 38 mins</span></div></div></div>
+    <div class="gc yt-gc"><div class="yt-th"><div class="yt-bg-ico">💡</div><span class="yt-lbl">Research Tips</span><div class="yt-play"></div></div><div class="yt-bd"><div class="yt-ttl">How to Write a Strong MS/PhD Research Proposal</div><div class="yt-d">From topic selection to literature review and methodology — a complete guide for MS and PhD students at UAP.</div><div class="yt-meta"><span>▶ 1.8K views</span><span>⏱ 55 mins</span></div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:32px;"><a href="#" class="btn bp" style="display:inline-flex;">▶ View All Video Lectures on YouTube</a></div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ AWARDS ══ -->
+<section id="awards">
+  <div class="tc">
+    <div class="stag">Awards & Achievements</div>
+    <h2 class="sh2">Recognised <span class="ac">Excellence</span></h2>
+    <p class="sdesc">A distinguished record of academic achievements, national recognition, and impactful contributions to education and research.</p>
+  </div>
+  <div class="awg">
+    <div class="gc aw-gc gc-rainbow"><div class="aw-num">01</div><div class="aw-body"><div class="aw-t">HEC Scotland Research Exposure Tour</div><div class="aw-d">Selected in All Pakistan by HEC and visited Scotland for Research Exposure Tour in March 2018 — representing Pakistani academia at an international level.</div><span class="aw-tag">HEC · 2018 · International</span></div></div>
+    <div class="gc aw-gc"><div class="aw-num">02</div><div class="aw-body"><div class="aw-t">16 MS Scholars Produced — 5 Gold Medallists</div><div class="aw-d">Successfully supervised and produced 16 Master of Science scholars, of whom 5 received gold medals for academic excellence.</div><span class="aw-tag">Academic Excellence · UAP</span></div></div>
+    <div class="gc aw-gc gc-rainbow"><div class="aw-num">03</div><div class="aw-body"><div class="aw-t">Pakistan's 1st Official Online Ideas Bank</div><div class="aw-d">Developer & Designer of the 1st official online Ideas Bank in Pakistan for the Directorate of Science & Technology (DoST) — a nationally significant digital innovation.</div><span class="aw-tag">Innovation · DoST Pakistan</span></div></div>
+    <div class="gc aw-gc"><div class="aw-num">04</div><div class="aw-body"><div class="aw-t">HEC Focal Person — Microsoft IT Academy</div><div class="aw-d">Served as Focal Person for HEC Microsoft IT Academy Program, linking the university with Microsoft's global IT education initiative.</div><span class="aw-tag">HEC · Microsoft · National</span></div></div>
+    <div class="gc aw-gc gc-rainbow"><div class="aw-num">05</div><div class="aw-body"><div class="aw-t">NGIRI-Funded FYP Supervisor</div><div class="aw-d">Supervised 2 Final Year Projects in Web Development funded by the National Grassroots ICT Research Initiative (NGIRI) — a competitive national grant program.</div><span class="aw-tag">NGIRI · Funded Research</span></div></div>
+    <div class="gc aw-gc"><div class="aw-num">06</div><div class="aw-body"><div class="aw-t">Merit Scholarship — MSc & BSc, UET Peshawar</div><div class="aw-d">Awarded merit scholarships in both BSc and MSc Computer Systems Engineering from the prestigious University of Engineering & Technology, Peshawar.</div><span class="aw-tag">Merit · UET Peshawar</span></div></div>
+    <div class="gc aw-gc gc-rainbow"><div class="aw-num">07</div><div class="aw-body"><div class="aw-t">Postgraduate Coordinator — CS/IT MS Programs</div><div class="aw-d">Appointed Coordinator for CS/IT MS programs at IBMS, University of Agriculture Peshawar — overseeing postgraduate academic operations.</div><span class="aw-tag">Leadership · UAP · IBMS</span></div></div>
+    <div class="gc aw-gc"><div class="aw-num">08</div><div class="aw-body"><div class="aw-t">30+ Supervised BS CS/IT Projects</div><div class="aw-d">Successfully supervised more than 30 final-year projects at the BS level in CS/IT — delivering practical, industry-relevant research outcomes.</div><span class="aw-tag">Teaching Excellence · UAP</span></div></div>
+    <div class="gc aw-gc gc-rainbow"><div class="aw-num">09</div><div class="aw-body"><div class="aw-t">Best Debater — All Pakistan Level (English)</div><div class="aw-d">Achieved Best Debater and Compere distinctions at school, college, university, and All Pakistan level in English — demonstrating exceptional communication excellence.</div><span class="aw-tag">All Pakistan · English Debate</span></div></div>
+    <div class="gc aw-gc"><div class="aw-num">10</div><div class="aw-body"><div class="aw-t">Member Board of Studies & QEC</div><div class="aw-d">Active member of Board of Studies for CS/IT MS programs and Quality Enhancement Cell (QEC) — shaping curriculum quality and institutional standards at UAP.</div><span class="aw-tag">Governance · UAP</span></div></div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ BLOG ══ -->
+<section id="blog">
+  <div class="tc">
+    <div class="stag">Blog & Articles</div>
+    <h2 class="sh2">Thoughts &amp; <span class="ac">Insights</span></h2>
+    <p class="sdesc">Research insights, practical guidance, and expert perspectives on Cyber Security, IoT, AI and academic life.</p>
+  </div>
+  <div class="blg">
+    <div class="gc blog-gc gc-rainbow"><div class="blog-top"><span class="blog-cat">Cyber Security</span><div class="blog-bg-ico">🔐</div></div><div class="blog-bd"><div class="blog-dt">March 2025</div><div class="blog-ttl">AI-Powered Threats: The New Cyber Security Challenge</div><div class="blog-ex">How artificial intelligence is enabling more sophisticated cyberattacks — and what defenders can do to stay ahead of adversarial AI.</div><a href="#" class="blog-link">Read Article →</a></div></div>
+    <div class="gc blog-gc"><div class="blog-top"><span class="blog-cat">IoT Research</span><div class="blog-bg-ico">📡</div></div><div class="blog-bd"><div class="blog-dt">February 2025</div><div class="blog-ttl">Smart Logistics in Pakistan: IoT Opportunities</div><div class="blog-ex">Exploring how IoT-based smart logistics systems can transform supply chains, reduce costs, and improve efficiency in the Pakistani context.</div><a href="#" class="blog-link">Read Article →</a></div></div>
+    <div class="gc blog-gc gc-rainbow"><div class="blog-top"><span class="blog-cat">Student Guide</span><div class="blog-bg-ico">🎯</div></div><div class="blog-bd"><div class="blog-dt">January 2025</div><div class="blog-ttl">How to Excel in Your MS Thesis at UAP</div><div class="blog-ex">Practical guidance from experience supervising 16 MS scholars — how to choose a topic, manage your research, and write a high-quality thesis.</div><a href="#" class="blog-link">Read Article →</a></div></div>
+    <div class="gc blog-gc"><div class="blog-top"><span class="blog-cat">Remote Sensing</span><div class="blog-bg-ico">🛰️</div></div><div class="blog-bd"><div class="blog-dt">December 2024</div><div class="blog-ttl">Remote Sensing Applications in KPK Agriculture</div><div class="blog-ex">Using satellite imagery and AI-driven classification to monitor crop health, detect land-use changes, and support food security in Khyber Pakhtunkhwa.</div><a href="#" class="blog-link">Read Article →</a></div></div>
+    <div class="gc blog-gc gc-rainbow"><div class="blog-top"><span class="blog-cat">Career Advice</span><div class="blog-bg-ico">💼</div></div><div class="blog-bd"><div class="blog-dt">November 2024</div><div class="blog-ttl">Building a Research Career in Cyber Security — Pakistan Perspective</div><div class="blog-ex">Step-by-step guide for Pakistani students: from HEC scholarships to international research collaborations and publishing in top journals.</div><a href="#" class="blog-link">Read Article →</a></div></div>
+    <div class="gc blog-gc"><div class="blog-top"><span class="blog-cat">Pattern Recognition</span><div class="blog-bg-ico">🔍</div></div><div class="blog-bd"><div class="blog-dt">October 2024</div><div class="blog-ttl">Pattern Recognition in Digital Image Processing: Practical Guide</div><div class="blog-ex">From feature extraction to classification algorithms — a practical walkthrough of pattern recognition techniques for image analysis using Python and MATLAB.</div><a href="#" class="blog-link">Read Article →</a></div></div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ GALLERY ══ -->
+<section id="gallery">
+  <div class="tc">
+    <div class="stag">Gallery</div>
+    <h2 class="sh2">Moments &amp; <span class="ac">Memories</span></h2>
+    <p class="sdesc">Academic milestones, research highlights, and memorable moments from UAP and beyond.</p>
+  </div>
+  <div class="galgrid">
+    <div class="gi"><div class="gin">🎓<div class="gcap">PhD Graduation — UET Peshawar</div></div></div>
+    <div class="gi"><div class="gin" style="font-size:2.2rem;">🏴󠁧󠁢󠁳󠁣󠁴󠁿<div class="gcap">Scotland Research Exposure Tour — HEC 2018</div></div></div>
+    <div class="gi"><div class="gin">🏆<div class="gcap">Gold Medallists Graduation Ceremony</div></div></div>
+    <div class="gi"><div class="gin">🖥️<div class="gcap">CS Lab Session — ICS/IT UAP</div></div></div>
+    <div class="gi"><div class="gin">💡<div class="gcap">1st Online Ideas Bank — DoST Pakistan Launch</div></div></div>
+    <div class="gi"><div class="gin">🎤<div class="gcap">Best Debater — All Pakistan Level</div></div></div>
+    <div class="gi"><div class="gin">📡<div class="gcap">IoT Research Project Demo</div></div></div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ DEPARTMENT ══ -->
+<section id="department">
+  <div class="tc">
+    <div class="stag">ICS/IT Department</div>
+    <h2 class="sh2">Teaching Staff — <span class="ac">ICS/IT UAP</span></h2>
+    <p class="sdesc">Dr. Arbab Waseem Abbas serves as Lecturer at the Institute of Computer Sciences and Information Technology, University of Agriculture Peshawar — alongside a distinguished team of faculty.</p>
+  </div>
+
+  <!-- Department header card -->
+  <div class="gc gc-rainbow dept-header-card" style="margin-top:40px;">
+    <div class="dept-title-group">
+      <h3>🏛️ Institute of Computer Sciences and Information Technology (ICS/IT)</h3>
+      <p>The University of Agriculture, Peshawar, 25130, Khyber Pakhtunkhwa, Pakistan · Est. 1981</p>
+      <p style="margin-top:6px;font-size:0.78rem;color:var(--accent-deep);font-weight:600;">Director: Dr. Arshad Khan</p>
+    </div>
+    <div class="dept-links">
+      <a href="https://www.aup.edu.pk" target="_blank" class="dept-link ext">🌐 UAP Website</a>
+      <a href="https://www.aup.edu.pk" target="_blank" class="dept-link ext">📋 Teaching Staff</a>
+      <a href="https://www.aup.edu.pk" target="_blank" class="dept-link ext">🎓 Apply Now</a>
+      <a href="https://www.aup.edu.pk" target="_blank" class="dept-link ext">📰 Journals</a>
+      <a href="https://www.aup.edu.pk" target="_blank" class="dept-link ext">💼 Jobs</a>
+      <a href="mailto:pio@aup.edu.pk" class="dept-link">✉️ pio@aup.edu.pk</a>
+    </div>
+  </div>
+
+  <!-- Staff Grid -->
+  <div class="staff-grid">
+    <!-- Director -->
+    <div class="gc staff-card"><div class="staff-av">👨‍💼</div><div class="staff-name">Dr. Arshad Khan</div><div class="staff-role" style="color:var(--accent-deep);font-weight:700;">Director ICS/IT</div></div>
+    <!-- Professors -->
+    <div class="gc staff-card"><div class="staff-av">👨‍🔬</div><div class="staff-name">Dr. Asfandyar</div><div class="staff-role">Associate Professor (Tenured)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍🔬</div><div class="staff-name">Dr. Muhammad Imran</div><div class="staff-role">Associate Professor (Tenured)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍🔬</div><div class="staff-name">Dr. Abdullah</div><div class="staff-role">Associate Professor (Tenured)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍🏫</div><div class="staff-name">Dr. Muhammad Asim</div><div class="staff-role">Assistant Professor (TTS)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍🏫</div><div class="staff-name">Dr. Muhammad Ishaq</div><div class="staff-role">Assistant Professor (TTS)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍🔬</div><div class="staff-name">Dr. Javed Iqbal Bangash</div><div class="staff-role">Associate Professor (Tenured)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍🏫</div><div class="staff-name">Muhammad Shahid</div><div class="staff-role">Assistant Professor</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Imranuddin</div><div class="staff-role">Lecturer</div></div>
+    <!-- HIGHLIGHTED — DR. ARBAB -->
+    <div class="gc staff-card highlighted">
+      <div class="staff-av">🛡️</div>
+      <div class="staff-name">Dr. Arbab Waseem Abbas</div>
+      <div class="staff-role">Lecturer</div>
+      <div class="you-badge">✦ This Profile</div>
+    </div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Dr. Rafiullah Khan</div><div class="staff-role">Lecturer</div></div>
+    <div class="gc staff-card"><div class="staff-av">👩‍🏫</div><div class="staff-name">Lala Rukh</div><div class="staff-role">Lecturer</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Engr. Muhammad Shoaib</div><div class="staff-role">Lecturer</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍🔬</div><div class="staff-name">Dr. Mohib Ullah</div><div class="staff-role">Lecturer</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Hazrat Bilal</div><div class="staff-role">Lecturer</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Gulzar Ahmad</div><div class="staff-role">Lecturer</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Said Ul Abrar</div><div class="staff-role">Lecturer</div></div>
+    <div class="gc staff-card"><div class="staff-av">👩‍💻</div><div class="staff-name">Asiya Jan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Irshad Ullah</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Yasir Ahmad</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Abdullah Khan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👩‍💻</div><div class="staff-name">Sana Zahir</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Muhammad Nauman Khan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Babar Saeed</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Basharat Ahmad Hassan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Raheel Zaman</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👩‍💻</div><div class="staff-name">Nida Gul</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Muhammad Younas</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Muhammad Muntazir Khan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Noman Ahmad</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Wahib Jamal Khan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Habib Un Nabi</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Asif Khan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👩‍💻</div><div class="staff-name">Spogmay Rafiq</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Izaz Ahmad</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Mudassir Ahmad Khan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Muhammad Tariq</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Romaan Khan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Muhammad Khan</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Muhammad Shahid</div><div class="staff-role">Lecturer (Contract)</div></div>
+    <div class="gc staff-card"><div class="staff-av">👨‍💻</div><div class="staff-name">Nizam Ahmad</div><div class="staff-role">Lecturer (Contract)</div></div>
+  </div>
+
+  <!-- University-wide contact info strip -->
+  <div class="uap-info-strip">
+    <div class="gc uap-strip-card">
+      <div class="uap-strip-ico">🏛️</div>
+      <div class="uap-strip-txt">
+        <h4>University Switchboard</h4>
+        <a href="tel:+929192213041">+92 91 9221304-11</a>
+        <p style="font-size:0.72rem;color:var(--text-light);margin-top:2px;">The University of Agriculture, Peshawar</p>
+      </div>
+    </div>
+    <div class="gc uap-strip-card">
+      <div class="uap-strip-ico">📋</div>
+      <div class="uap-strip-txt">
+        <h4>Public Information Office</h4>
+        <a href="tel:+929192211444">+92 91 9221144 Ext: 3344</a>
+        <a href="mailto:pio@aup.edu.pk" style="display:block;font-size:0.78rem;color:var(--accent);">pio@aup.edu.pk</a>
+      </div>
+    </div>
+    <div class="gc uap-strip-card">
+      <div class="uap-strip-ico">⚙️</div>
+      <div class="uap-strip-txt">
+        <h4>Director Administration</h4>
+        <a href="tel:+929192211674">+92 91 9221167 Ext: 3142</a>
+        <a href="mailto:shoaib_afridi123@yahoo.com" style="display:block;font-size:0.78rem;color:var(--accent);">shoaib_afridi123@yahoo.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials">
+  <div class="tc">
+    <div class="stag">Student Voices</div>
+    <h2 class="sh2">What Students <span class="ac">Say</span></h2>
+  </div>
+  <div class="testg">
+    <div class="gc tst-gc gc-rainbow"><div class="tstars">★★★★★</div><span class="tq">"</span><p class="ttxt">Dr. Arbab's lectures on IoT and Cyber Security are truly outstanding. His ability to connect theory with real-world applications made complex topics easy to understand. I'm proud to be one of his MS scholars.</p><div class="tauth"><div class="tav">👨‍🎓</div><div><div class="tnm">MS Scholar — Gold Medallist</div><div class="trole">Computer Systems Engineering · UAP</div></div></div></div>
+    <div class="gc tst-gc"><div class="tstars">★★★★★</div><span class="tq">"</span><p class="ttxt">As my final year project supervisor, Dr. Abbas guided me through every step with patience and expertise. My web development FYP was even funded by the NGIRI program, which was a huge achievement for me.</p><div class="tauth"><div class="tav">👩‍💻</div><div><div class="tnm">BS CS Graduate</div><div class="trole">ICS/IT, University of Agriculture Peshawar</div></div></div></div>
+    <div class="gc tst-gc gc-rainbow"><div class="tstars">★★★★★</div><span class="tq">"</span><p class="ttxt">Sir's deep knowledge of AI and Pattern Recognition pushed me to pursue research I never thought I could do. Under his supervision I completed my MS with distinction. His mentorship is truly world-class.</p><div class="tauth"><div class="tav">👨‍💼</div><div><div class="tnm">MS Scholar</div><div class="trole">Postgraduate Program · IBMS UAP</div></div></div></div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ ENROLLMENT ══ -->
+<section id="enroll">
+  <div>
+    <div class="stag">Student Enrollment</div>
+    <h2 class="sh2">Enroll in a <span class="ac">Course</span></h2>
+    <p class="sdesc">Interested in studying under Dr. Arbab Waseem Abbas? Fill in the form and we'll connect you with the right program at ICS/IT, UAP.</p>
+  </div>
+  <div class="enroll-wrap">
+    <div class="ef-list">
+      <div class="ef"><div class="ef-ico">🎓</div><div class="ef-txt"><h4>Undergraduate & Postgraduate</h4><p>Courses available at both BS and MS levels across Cyber Security, IoT, AI, Image Processing, and more.</p></div></div>
+      <div class="ef"><div class="ef-ico">🔬</div><div class="ef-txt"><h4>Research-Oriented Teaching</h4><p>Learn from an active researcher — coursework is always informed by the latest research and real-world case studies.</p></div></div>
+      <div class="ef"><div class="ef-ico">🏅</div><div class="ef-txt"><h4>Track Record of Gold Medallists</h4><p>Dr. Abbas has produced 5 gold-medal MS scholars. His guidance can help you achieve academic excellence too.</p></div></div>
+      <div class="ef"><div class="ef-ico">🤝</div><div class="ef-txt"><h4>Personal Mentorship</h4><p>Direct access to Dr. Abbas for project guidance, thesis supervision, and career mentoring throughout your studies.</p></div></div>
+      <div class="ef"><div class="ef-ico">🌍</div><div class="ef-txt"><h4>HEC-Recognized Programs</h4><p>Programs at ICS/IT UAP are fully accredited and HEC-recognized — your degree is respected nationally and internationally.</p></div></div>
+    </div>
+    <div class="gc form-gc gc-rainbow">
+      <div class="fg-row">
+        <div class="fg"><label class="fl">First Name</label><input class="fi" type="text" placeholder="Ahmad"/></div>
+        <div class="fg"><label class="fl">Last Name</label><input class="fi" type="text" placeholder="Khan"/></div>
+      </div>
+      <div class="fg"><label class="fl">Email Address</label><input class="fi" type="email" placeholder="you@email.com"/></div>
+      <div class="fg"><label class="fl">WhatsApp / Phone</label><input class="fi" type="tel" placeholder="+92 300 0000000"/></div>
+      <div class="fg"><label class="fl">Program of Interest</label><select class="fi"><option value="" disabled selected>Select program...</option><option>BS — Cyber Security</option><option>BS — Computer Science</option><option>BS — Information Technology</option><option>MS — Computer Systems Engineering</option><option>MS — Cyber Security / AI</option></select></div>
+      <div class="fg"><label class="fl">Course Interest</label><select class="fi"><option value="" disabled selected>Choose area...</option><option>Cyber Security</option><option>Internet of Things (IoT)</option><option>Artificial Intelligence</option><option>Digital Image / Signal Processing</option><option>Remote Sensing & GIS</option><option>Research Supervision (MS/BS Project)</option></select></div>
+      <div class="fg"><label class="fl">Current Qualification</label><select class="fi"><option value="" disabled selected>Your qualification...</option><option>Intermediate / A-Levels</option><option>Bachelor's Student</option><option>Bachelor's Graduate</option><option>MS Student / Graduate</option><option>Working Professional</option></select></div>
+      <div class="fg"><label class="fl">Message (optional)</label><textarea class="fi" placeholder="Tell Dr. Abbas about your goals and interests..."></textarea></div>
+      <button class="enroll-btn" onclick="se(this)">✍️ Submit Enrollment Application</button>
+    </div>
+  </div>
+</section>
+
+<hr class="pdiv"/>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div>
+    <div class="stag">Get In Touch</div>
+    <h2 class="sh2">Contact <span class="ac">Dr. Abbas</span></h2>
+    <p class="sdesc">For academic inquiries, research collaborations, thesis supervision, or course enrollment — reach out directly.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="gc form-gc gc-rainbow">
+      <div class="fg"><label class="fl">Full Name</label><input class="fi" type="text" placeholder="Your name"/></div>
+      <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="your@email.com"/></div>
+      <div class="fg"><label class="fl">Subject</label><input class="fi" type="text" placeholder="Research / Supervision / Course inquiry..."/></div>
+      <div class="fg"><label class="fl">Message</label><textarea class="fi" placeholder="Write your message..."></textarea></div>
+      <button class="contact-btn" onclick="sc(this)">📬 Send Message</button>
+    </div>
+    <div>
+      <div class="ci-list">
+        <div class="ci"><div class="ci-ico">📞</div><div class="ci-txt"><h4>Direct Mobile</h4><a href="tel:+923015922642">+92 301 5922642</a></div></div>
+        <div class="ci"><div class="ci-ico">📞</div><div class="ci-txt"><h4>Office / Department</h4><p>+92 91 9221323 &nbsp;|&nbsp; +92 91 9221262</p></div></div>
+        <div class="ci"><div class="ci-ico">🏛️</div><div class="ci-txt"><h4>University Switchboard</h4><a href="tel:+929192213041">+92 91 9221304-11</a></div></div>
+        <div class="ci"><div class="ci-ico">✉️</div><div class="ci-txt"><h4>Personal Email</h4><a href="mailto:aristocratarbab@aup.edu.pk">aristocratarbab@aup.edu.pk</a></div></div>
+        <div class="ci"><div class="ci-ico">✉️</div><div class="ci-txt"><h4>Public Info Office (UAP)</h4><a href="mailto:pio@aup.edu.pk">pio@aup.edu.pk</a></div></div>
+        <div class="ci"><div class="ci-ico">🌐</div><div class="ci-txt"><h4>University Website</h4><a href="https://www.aup.edu.pk" target="_blank">www.aup.edu.pk</a></div></div>
+        <div class="ci"><div class="ci-ico">📍</div><div class="ci-txt"><h4>Mailing Address</h4><p>ICS/IT, The University of Agriculture, Peshawar, 25130, KPK, Pakistan</p></div></div>
+      </div>
+      <div class="gc hrs-gc" style="margin-top:15px;">
+        <div class="hrs-t">🕐 Office Hours</div>
+        <div class="hr"><span class="hr-d">Monday – Wednesday</span><span class="hr-t">09:00 – 13:00</span></div>
+        <div class="hr"><span class="hr-d">Thursday</span><span class="hr-t">10:00 – 14:00</span></div>
+        <div class="hr"><span class="hr-d">Friday</span><span class="hr-t">09:00 – 11:30</span></div>
+        <div class="hr"><span class="hr-d">Saturday – Sunday</span><span class="hr-t" style="color:#b02020;">Closed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ftg">
+    <div class="ft-brand">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,rgba(255,255,255,0.95),rgba(195,225,245,0.68));border:1px solid rgba(255,255,255,1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 3px 12px rgba(74,143,194,0.14);">🛡️</div>
+        <div><div style="font-family:'Playfair Display',serif;font-size:0.96rem;font-weight:800;color:var(--text-dark);">Dr. Arbab Waseem Abbas</div><div style="font-size:0.58rem;color:var(--text-light);letter-spacing:0.12em;text-transform:uppercase;">PhD · Lecturer · ICS/IT · UAP</div></div>
+      </div>
+      <p>Educator and researcher at ICS/IT, University of Agriculture Peshawar — specializing in Cyber Security, IoT, AI, Remote Sensing and Digital Image Processing.</p>
+    </div>
+    <div class="ft-col"><h4>Navigation</h4><ul><li><a href="#about">About</a></li><li><a href="#courses">Courses</a></li><li><a href="#youtube">Lectures</a></li><li><a href="#awards">Awards</a></li><li><a href="#department">Department</a></li><li><a href="#blog">Blog</a></li></ul></div>
+    <div class="ft-col"><h4>Research Areas</h4><ul><li><a href="#about">Cyber Security</a></li><li><a href="#about">IoT</a></li><li><a href="#about">Artificial Intelligence</a></li><li><a href="#about">Remote Sensing</a></li><li><a href="#about">Pattern Recognition</a></li></ul></div>
+    <div class="ft-col"><h4>UAP Quick Links</h4><ul><li><a href="https://www.aup.edu.pk" target="_blank">UAP Home</a></li><li><a href="https://www.aup.edu.pk" target="_blank">Tenders</a></li><li><a href="https://www.aup.edu.pk" target="_blank">Jobs / Careers</a></li><li><a href="https://www.aup.edu.pk" target="_blank">Annual Reports</a></li><li><a href="https://www.aup.edu.pk" target="_blank">Apply Now</a></li><li><a href="https://www.aup.edu.pk" target="_blank">Webmail Login</a></li></ul></div>
+  </div>
+
+  <!-- UAP Contact Strip -->
+  <div class="ft-uap">
+    <div class="ft-uap-item"><strong>University Switchboard</strong><a href="tel:+929192213041">+92 91 9221304-11</a></div>
+    <div class="ft-uap-item"><strong>Public Info Office (PIO)</strong><a href="tel:+929192211444">+92 91 9221144 Ext: 3344</a> · <a href="mailto:pio@aup.edu.pk">pio@aup.edu.pk</a></div>
+    <div class="ft-uap-item"><strong>Director Administration</strong><a href="tel:+929192211674">+92 91 9221167 Ext: 3142</a></div>
+  </div>
+  <div class="ftb">
+    <span>© 2025 Dr. Arbab Waseem Abbas · ICS/IT, University of Agriculture Peshawar · All rights reserved.</span>
+    <span>Crafted with 💙 by <a href="https://toracyberstack.vercel.app" target="_blank">TORA CYBER STACK</a></span>
+  </div>
+</footer>
+
+<script>
+// CURSOR
+const C=document.getElementById('CR'),R=document.getElementById('CR2');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+'px';C.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*0.13;ry+=(my-ry)*0.13;if(R){R.style.left=rx+'px';R.style.top=ry+'px';}requestAnimationFrame(a)})();
+document.querySelectorAll('a,button,.gc,.ri,.ef,.ci').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{if(C)C.style.transform='translate(-50%,-50%) scale(2.2)';if(R){R.style.transform='translate(-50%,-50%) scale(1.5)';R.style.borderColor='rgba(74,143,194,0.7)';}});
+  el.addEventListener('mouseleave',()=>{if(C)C.style.transform='translate(-50%,-50%) scale(1)';if(R){R.style.transform='translate(-50%,-50%) scale(1)';R.style.borderColor='rgba(74,143,194,0.5)';}});
+});
+
+// PARTICLES
+const cv=document.getElementById('pcv'),ctx=cv.getContext('2d');
+let W=cv.width=window.innerWidth,H=cv.height=window.innerHeight;
+window.addEventListener('resize',()=>{W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;});
+const pts=Array.from({length:50},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.28,vy:(Math.random()-0.5)*0.28,r:Math.random()*1.4+0.5}));
+(function draw(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(74,143,194,0.2)';ctx.fill();});
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<105){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(74,143,194,${0.09*(1-d/105)})`;ctx.lineWidth=0.5;ctx.stroke();}}
+  requestAnimationFrame(draw);
+})();
+
+// SCROLL REVEAL
+const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.07});
+document.querySelectorAll('.gc,.ri,.ef,.ci,.gi,.spec-tag').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(26px)';el.style.transition='opacity 0.55s ease,transform 0.55s ease,box-shadow 0.38s,border-color 0.38s,background 0.3s';ob.observe(el);});
+
+// NAV
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.boxShadow=window.scrollY>30?'0 3px 26px rgba(80,130,170,0.14)':'';});
+
+// MOB
+function tm(){document.getElementById('mn').classList.toggle('open');}
+function cm(){document.getElementById('mn').classList.remove('open');}
+
+// FORMS
+function se(b){b.textContent='✅ Application Submitted!';b.style.background='linear-gradient(135deg,#1a9a60,#2ecc71)';setTimeout(()=>{b.textContent='✍️ Submit Enrollment Application';b.style.background='';},3500);}
+function sc(b){b.textContent='✅ Message Sent!';b.style.background='linear-gradient(135deg,#1a7090,#3aaccc)';setTimeout(()=>{b.textContent='📬 Send Message';b.style.background='';},3500);}
+</script>
+</body>
+</html>
